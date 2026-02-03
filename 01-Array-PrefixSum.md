@@ -751,12 +751,12 @@ public class PrefixSumTemplate {
 
 | Concept | Remember |
 |---------|----------|
-| **Build prefix** | `prefix[i] = prefix[i-1] + arr[i]` |
-| **Query sum** | `prefix[R] - prefix[L-1]` or `prefix[R+1] - prefix[L]` |
-| **Time complexity** | O(n) build, O(1) query |
-| **HashMap pattern** | Init with `map.put(0, 1)` |
-| **2D formula** | Total - Top - Left + TopLeft |
-| **Difference array** | `diff[L]++, diff[R+1]--`, then prefix sum |
+| **Build prefix** | `prefix[i] = prefix[i-1] + arr[i]` // BEST: Iterative DP |
+| **Query sum** | `prefix[R+1] - prefix[L]` // BEST: n+1 sized array |
+| **Time complexity** | O(n) build, O(1) query // BEST: Prefix Sum |
+| **HashMap pattern** | Init with `map.put(0, 1)` // BEST: Prefix + HashMap |
+| **2D formula** | Total - Top - Left + TopLeft // BEST: Inclusion-Exclusion |
+| **Difference array** | `diff[L]++, diff[R+1]--`, then prefix sum // BEST: Range Updates |
 
 ---
 
